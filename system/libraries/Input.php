@@ -65,6 +65,7 @@ class Input_Core {
 
 		if (Input::$instance === NULL)
 		{
+/*
 			// magic_quotes_runtime is enabled
 			if (get_magic_quotes_runtime())
 			{
@@ -78,6 +79,7 @@ class Input_Core {
 				$this->magic_quotes_gpc = TRUE;
 				Kohana_Log::add('debug', 'Disable magic_quotes_gpc! It is evil and deprecated: http://php.net/magic_quotes');
 			}
+*/
 
 			if (is_array($_GET))
 			{
