@@ -63,11 +63,11 @@ class Image_GD_Driver extends Image_Driver {
 
 		// Make sure the image type is supported for import
 		if (empty($create) OR ! function_exists($create))
-			throw new Kohana_Exception('The specified image, :type:, is not an allowed image type.', array(':type:' => $image['file']));
+			throw new Kohana_Exception('The specified image, :image: (:type:), is not an allowed image type.to create [:create:]', array(':image:' => $image['file'], ':type:' => $image['type'], ':create:' => $create));
 
 		// Make sure the image type is supported for saving
 		if (empty($save) OR ! function_exists($save))
-			throw new Kohana_Exception('The specified image, :type:, is not an allowed image type.', array(':type:' => $dir.$file));
+			throw new Kohana_Exception('The specified image, :file:, is not an allowed image type to save [:save:]', array(':file:' => $dir.$file, ':save:' => $save));
 
 		// Load the image
 		$this->image = $image;

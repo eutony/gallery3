@@ -93,7 +93,7 @@ class Image_Core {
 
 		// Check to make sure the image type is allowed
 		if ( ! isset(Image::$allowed_types[$image_info[2]]))
-			throw new Kohana_Exception('The specified image, :type:, is not an allowed image type.', array(':type:' => $image));
+			throw new Kohana_Exception('The specified image, :image: (:type:), is not an allowed image type.', array(':image:' => $image, ':type:' => $image_info[2]));
 
 		// Image has been validated, load it
 		$this->image = array
