@@ -26,16 +26,17 @@ class num extends num_Core {
   static function convert_to_bytes($val) {
     $val = trim($val);
     $last = strtolower($val[strlen($val)-1]);
+    $intval = intval($val);
     switch($last) {
     case 'g':
-      $val *= 1024;
+      $intval *= 1024;
     case 'm':
-      $val *= 1024;
+      $intval *= 1024;
     case 'k':
-      $val *= 1024;
+      $intval *= 1024;
     }
 
-    return $val;
+    return $intval;
   }
 
   /**
