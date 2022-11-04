@@ -112,5 +112,13 @@ if (file_exists("local.php")) {
   include("local.php");
 }
 
+if (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https') {
+    $_SERVER['HTTPS'] = 'on';
+}
+
+if (isset($_SERVER['HTTP_X_FORWARDED_PORT'])) {
+  $_SERVER['SERVER_PORT'] = $_SERVER['HTTP_X_FORWARDED_PORT'];
+}
+
 // Initialize.
 require APPPATH . "Bootstrap" . EXT;
