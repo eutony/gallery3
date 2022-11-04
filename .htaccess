@@ -30,12 +30,10 @@
 # you'll get an "Internal Server Error".
 #
  <FilesMatch "(\.(class|fla|gitignore|inc|ini|sql|txt)|(README|LICENSE|.build_number))$">
-   Order deny,allow
-   Deny from all
+   Require all denied
  </FilesMatch>
  <FilesMatch "robots.txt">
-   Order allow,deny
-   Allow from all
+   Require all granted
  </FilesMatch>
 
 

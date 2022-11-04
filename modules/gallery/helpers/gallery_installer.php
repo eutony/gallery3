@@ -858,7 +858,7 @@ class gallery_installer {
     $fp = @fopen("$dir/.htaccess", "w+");
     fwrite($fp, "DirectoryIndex .htaccess\nSetHandler Gallery_Security_Do_Not_Remove\n" .
            "Options None\n<IfModule mod_rewrite.c>\nRewriteEngine off\n</IfModule>\n" .
-           "Order allow,deny\nDeny from all\n");
+           "Require all denied\n");
     fclose($fp);
   }
 }

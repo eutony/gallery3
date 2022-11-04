@@ -698,8 +698,7 @@ class access_Core {
         fwrite($fp, "  RewriteRule (.*) $base_url/\$1 [L]\n");
         fwrite($fp, "</IfModule>\n");
         fwrite($fp, "<IfModule !mod_rewrite.c>\n");
-        fwrite($fp, "  Order Deny,Allow\n");
-        fwrite($fp, "  Deny from All\n");
+        fwrite($fp, "  Require all denied\n");
         fwrite($fp, "</IfModule>\n");
         fclose($fp);
       } else {
