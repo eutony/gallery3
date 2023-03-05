@@ -32,6 +32,7 @@
  <FilesMatch "(\.(class|fla|gitignore|inc|ini|sql|txt)|(README|LICENSE|.build_number))$">
    Require all denied
  </FilesMatch>
+
  <FilesMatch "robots.txt">
    Require all granted
  </FilesMatch>
@@ -70,6 +71,8 @@
 #
  <IfModule mod_rewrite.c>
    Options +FollowSymLinks
+   RewriteRule \.git.* index.php [F]
+   RewriteRule \.travis.* index.php [F]
    RewriteEngine On
    RewriteBase /
    RewriteCond %{REQUEST_FILENAME} !-f
